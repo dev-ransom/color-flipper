@@ -26,7 +26,8 @@ function addItem(e){
         // 
         const Attr = document.createAttribute('data-id');
         Attr.value = id;
-        console.log(Attr);
+        element.setAttributeNode(Attr);
+        console.log(element);
         // displayAlert
         displayAlert('item added to the list', 'success', 'visible')
     }
