@@ -1,6 +1,6 @@
 
 /** SELECT ITEMS */
-const submitBtn = document.querySelector('#submitBtn'),itemInput = document.querySelector('#itemInput'), grocery_form = document.querySelector('.grocery_form'), grocery_list = document.querySelector('.grocery_list'), grocery_container = document.querySelector('.grocery_container'),grocery_item = document.querySelector('.grocery_item'), alert = document.querySelector('.alert'), delete_btn = document.querySelector('.delete_btn'), clear_btn = document.querySelector('.clear_btn');
+const submitBtn = document.querySelector('#submitBtn'),itemInput = document.querySelector('#itemInput'), grocery_form = document.querySelector('.grocery_form'), grocery_list = document.querySelector('.grocery_list'), grocery_container = document.querySelector('.grocery_container'),grocery_item = document.querySelector('.grocery_item'), alert = document.querySelector('.alert'), clear_btn = document.querySelector('.clear_btn');
 
 // ******************** edit options *************
 let editElement;
@@ -36,6 +36,11 @@ function addItem(e){
                 <i class="fa-solid fa-trash"></i>
             </button>
         </article>`
+        // event listener for edit and delete btn
+        const edit_btn = element.querySelector('.edit_btn');
+        const delete_btn = element.querySelector('.delete_btn');
+        delete_btn.addEventListener('click', deleteItem)
+        edit_btn.addEventListener('click', editItem)
         grocery_list.appendChild(element)
         // displayAlert
         displayAlert('item added to the list', 'success', 'visible')
@@ -64,7 +69,24 @@ function clearItems(){
         })
     }
     grocery_container.classList.remove('show_container');
-    displayAlert('empty list', 'danger', 'visible')
+    displayAlert('empty list', 'danger', 'visible');
+    setBackToDefault();
+}
+
+
+// deletebtn
+function deleteItem(e){
+    const element = e.currentTarget.parentElement.parentElement;
+    grocery_list.removeChild(element) ;
+    if(grocery_list.children.length === 0){
+        grocery_container.classList.remove('show_container')
+    }
+    displayAlert('item removed', 'danger', 'visible')
+}
+// editbtn
+
+function editItem(){
+    console.log('editted');
 }
 // displayAlert function
 
