@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color flippers</title>
+    <link rel="stylesheet" href="index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <section class="section_center">
+        <form class="grocery_form">
+            <p class="alert">please enter value</p>
+            <!-- empty = please enter value -->
+            <!-- edit = value successfully changed -->
+            <!-- submit = item added to the list -->
+            <!-- delete = item removed -->
+            <!-- clear item = empty list -->
+            <h2 class="header-text">Grocery Bud</h2>
+        <article class="form_control">
+            <input type="text" id="itemInput" placeholder="e.g. eggs">
+            <button class="submitBtn" id="submitBtn">Submit</button>
+        </article>
+        </form>
+        <article class="grocery_container">
+            <article class="grocery_list">
+                <article class="grocery_item">
+                    <p class="item">Javascript</p>
+                    <article class="btn_container">
+                        <button class="edit_btn">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </button>
+                        <button class="delete_btn">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </article>
+                </article>
+
+            </article>
+            <button type="button" class="clear_btn">Clear items</button>
+        </article>
+    </section>
+    <script src="./index.js"></script>
+</body>
+</html>
