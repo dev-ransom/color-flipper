@@ -101,6 +101,10 @@ input{
     visibility: hidden;
 }
 
+.show_container{
+    visibility: visible;
+}
+
 .grocery_list{
 
 margin-top: 40px;
@@ -137,6 +141,7 @@ margin-top: 40px;
     margin: 0 5px;
     cursor: pointer;
     background: #eef2f5;
+    transition: all 0.3s ease;
 }
 
 .btn_container button:nth-child(1){
@@ -145,9 +150,10 @@ margin-top: 40px;
 
 .btn_container button:nth-child(2){
     color: rgb(249, 76, 76);
+    
 }
 
-.grocery_container .clear_btn {
+.grocery_container  .clear_btn{
     border: none;
     background-color: white;
     cursor: pointer;
@@ -155,11 +161,17 @@ margin-top: 40px;
     font-size: 13px;
     letter-spacing: 5px;
     text-transform: capitalize;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 
 .grocery_container .clear_btn:hover{
+    color: rgb(204, 30, 30);
+}
+.grocery_container .edit_btn:hover{
+    color: rgba(24, 204, 24, 0.955);
+}
+.grocery_container .delete_btn:hover{
     color: rgb(204, 30, 30);
 }
 
