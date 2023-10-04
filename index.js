@@ -77,16 +77,26 @@ function clearItems(){
 // deletebtn
 function deleteItem(e){
     const element = e.currentTarget.parentElement.parentElement;
+    const id = element.dataset.id;
     grocery_list.removeChild(element) ;
     if(grocery_list.children.length === 0){
         grocery_container.classList.remove('show_container')
     }
-    displayAlert('item removed', 'danger', 'visible')
+    displayAlert('item removed', 'danger', 'visible');
+    setBackToDefault();
+    removeLocalStorage(id);
 }
-// editbtn
+// set edititems
 
-function editItem(){
-    console.log('editted');
+function editItem(e){
+    const element = e.currentTarget.parentElement.parentElement;
+    editElement = e.currentTarget.parentElement.previousElementSibling;
+    // set item
+    itemInput.value = editElement.innerHTML;
+    editFlag = true;
+    editID = element.dataset.id;
+    submitBtn.textContent = 'edit'
+    
 }
 // displayAlert function
 
@@ -117,5 +127,7 @@ function setBackToDefault(){
 function addToLocalStorage(id, value){
     console.log('added to local storage');
 }
+
+function removeLocalStorage(id){} 
 // select items
 
