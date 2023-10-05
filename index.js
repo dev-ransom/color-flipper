@@ -1,6 +1,6 @@
 
 /** SELECT ITEMS */
-const submitBtn = document.querySelector('#submitBtn'),itemInput = document.querySelector('#itemInput'), grocery_form = document.querySelector('.grocery_form'), grocery_list = document.querySelector('.grocery_list'), grocery_container = document.querySelector('.grocery_container'),grocery_item = document.querySelector('.grocery_item'), alert = document.querySelector('.alert'), clear_btn = document.querySelector('.clear_btn');
+const submitBtn = document.querySelector('#submitBtn'),itemInput = document.querySelector('#itemInput'), grocery_form = document.querySelector('.grocery_form'), grocery_list = document.querySelector('.grocery_list'), grocery_container = document.querySelector('.grocery_container'), grocery_item = document.querySelector('.grocery_item'), alert = document.querySelector('.alert'), clear_btn = document.querySelector('.clear_btn');
 
 // ******************** edit options *************
 let editElement;
@@ -36,6 +36,11 @@ function addItem(e){
                 <i class="fa-solid fa-trash"></i>
             </button>
         </article>`
+        const inputValue = value.trim();
+        const groceryItems = document.querySelectorAll('.grocery_item');
+        groceryItems.forEach(function(item){
+            
+        })
         // event listener for edit and delete btn
         const edit_btn = element.querySelector('.edit_btn');
         const delete_btn = element.querySelector('.delete_btn');
@@ -152,3 +157,6 @@ function getLocalStorage(){
 // localStorage.setItem('list', JSON.stringify(['ransom', 'sunday']));
 // let fetchItem = JSON.parse(localStorage.getItem('list'));
 // localStorage.removeItem('list');
+
+
+// check if list item exist before 
