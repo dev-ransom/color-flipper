@@ -52,7 +52,10 @@ function addItem(e){
         setBackToDefault();
     }
     else if( value  && editFlag ){
-        
+        editElement.innerHTML = value;
+        displayAlert('value successfully changed ', 'success', 'visible');
+        editLocalStorage(editID, value);
+        setBackToDefault();
     }
     else{
         displayAlert('please enter value', 'danger', 'visible');
@@ -125,9 +128,27 @@ function setBackToDefault(){
 
 // local storage 
 function addToLocalStorage(id, value){
-    console.log('added to local storage');
+    const grocery = {id:id, value:value}
+    const items = getLocalStorage();
+    items.push(grocery);
+    localStorage.setItem('grocery_list', JSON.stringify(items))
 }
 
-function removeLocalStorage(id){} 
+function removeLocalStorage(id){
+    let items = getLocalStorage();
+    items = items.filter(function(item){
+        if(item.id !==id){
+            return item;
+        }
+    })
+    localStorage.setItem('grocery_list', JSON.stringify(items));
+} 
 // select items
+function editLocalStorage(id, value){}
+function getLocalStorage(){
+    return localStorage.getItem('grocery_list') ? JSON.parse(localStorage.getItem('grocery_list')) : [];
+}
 
+// localStorage.setItem('list', JSON.stringify(['ransom', 'sunday']));
+// let fetchItem = JSON.parse(localStorage.getItem('list'));
+// localStorage.removeItem('list');

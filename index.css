@@ -11,12 +11,12 @@
 body{
     background: white;
     display: flex;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans', sans-serif;
     flex-direction: column;
-   padding: 100px;
+    padding: 50px;
 }
 
 .section_center{
@@ -25,6 +25,7 @@ body{
     text-align: center;
     padding: 30px 40px;
     border-radius: 10px;
+
 }
 
 .alert{
@@ -113,6 +114,8 @@ margin-top: 40px;
 .grocery_item{
     background-color:  #fff;
     display: flex;
+    flex-wrap: wrap;
+    align-items: center;
     justify-content: space-between;
     padding: 3px 10px;
     align-items: center;
@@ -135,9 +138,14 @@ margin-top: 40px;
     font-family: 'Open Sans', sans-serif;
 }
 
+.btn_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
 .btn_container button{
     border: none;
-    display: inline;
     margin: 0 5px;
     cursor: pointer;
     background: #eef2f5;
@@ -175,3 +183,44 @@ margin-top: 40px;
     color: rgb(204, 30, 30);
 }
 
+@media only screen and (max-width: 600px){
+    .section_center{
+        width: 300px;
+        padding: 10px 10px;
+        
+    }
+
+    .grocery_form{
+        width: 100%;
+    }
+
+    .grocery_item{
+        flex-wrap: nowrap;
+    }
+
+    input{
+        width: 70%;
+        font-size: 25px;
+    }
+
+    .submitBtn{
+        width: 30%;
+        font-size: 17px;
+    }
+    
+    h2{
+        font-size: 30px;
+    }
+
+    .grocery_list p{
+        font-size: 20px;
+    }
+
+    .btn_container button i{
+        font-size: 20px;
+    }
+
+    .grocery_container  .clear_btn{
+        font-size: 20px;
+    }
+}
