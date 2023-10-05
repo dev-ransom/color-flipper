@@ -15,7 +15,17 @@ clear_btn.addEventListener('click', clearItems);
 function addItem(e){
     e.preventDefault();
     const value  = itemInput.value;
-    const id = new Date().getTime().toString();
+      // Check if the item already exists in the list
+    const items = document.querySelectorAll('.item');
+    let item;
+    for(item of items){
+        if(item.textContent.trim() === value){
+            displayAlert('Item already exists', 'danger', 'visible');
+            setBackToDefault();
+            return;
+        }
+    }
+     const id = new Date().getTime().toString();
 
     // condition for submission
     if(value  && !editFlag ){
@@ -36,11 +46,8 @@ function addItem(e){
                 <i class="fa-solid fa-trash"></i>
             </button>
         </article>`
-        const inputValue = value.trim();
-        const groceryItems = document.querySelectorAll('.grocery_item');
-        groceryItems.forEach(function(item){
-            
-        })
+        // existing value
+        
         // event listener for edit and delete btn
         const edit_btn = element.querySelector('.edit_btn');
         const delete_btn = element.querySelector('.delete_btn');
